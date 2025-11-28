@@ -2,7 +2,9 @@ package com.algebra.evidencijapolaznika.dal.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @Data
 @Entity
 public class Upis {
@@ -18,4 +20,9 @@ public class Upis {
     @ManyToOne
     @JoinColumn(nullable = false)
     private ProgramObrazovanja programObrazovanja;
+
+    public Upis(Polaznik polaznik, ProgramObrazovanja programObrazovanja) {
+        this.polaznik = polaznik;
+        this.programObrazovanja = programObrazovanja;
+    }
 }

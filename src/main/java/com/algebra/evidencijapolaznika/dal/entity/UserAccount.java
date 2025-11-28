@@ -4,23 +4,24 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @NoArgsConstructor
 @Data
 @Entity
-public class ProgramObrazovanja {
+public class UserAccount {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(nullable = false, unique = true)
-    private String naziv;
+    private String username;
 
     @Column(nullable = false)
-    private Integer csvet;
+    private String password;
 
-    public ProgramObrazovanja(String naziv, Integer csvet) {
-        this.naziv = naziv;
-        this.csvet = csvet;
+    public UserAccount(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 }

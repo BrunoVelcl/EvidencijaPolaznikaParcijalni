@@ -1,11 +1,8 @@
 package com.algebra.evidencijapolaznika.dal.repository;
 
 import com.algebra.evidencijapolaznika.dal.entity.Upis;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-import java.util.Optional;
+public interface UpisRepository extends JpaRepository<Upis, Integer> {
 
-public interface UpisRepository {
-    Optional<Upis> findById(int id);
-    List<Upis> findAll();
 }
